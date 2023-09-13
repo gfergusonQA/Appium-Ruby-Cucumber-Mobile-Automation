@@ -1,8 +1,8 @@
 Before do
-puts "Before hook is executed"
+    Appium::Driver.start_driver
 end
-#above is executing before  every test scendario
+#above is executing before  every test scenario
 
 After do
-puts "After hook is executed"
+    Appium::Driver.driver_quit
 end

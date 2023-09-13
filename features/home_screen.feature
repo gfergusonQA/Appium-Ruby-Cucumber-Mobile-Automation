@@ -1,6 +1,7 @@
+@home_screen
 Feature: Tests for Home Screen functionality
 
-    @default
+    @default @wip
     Scenario Outline: Default values on Home Screen are foot and centimeter
         Given I land on Home Screen
         Then Left unit picker value should be "Foot"
