@@ -1,18 +1,37 @@
-require "appium_lib"
-require "cucumber"
+require 'appium_lib'
+require 'cucumber'
 
-#Define capabilities
-def caps
-{ caps: {
-    deviceName: "Gina", #You can put anything here
-    platformName: "Android",
-    automationName: "Appium",
-    app: File.join(File.dirname(__FILE__), "PreciseUnitConversion.apk"),
-    appPackage: "com.ba.universalconverter",
-    appActivity: "MainConverterActivity",
-    newCommandTimeout: "3600"
-}}
+# Define the parameters for the Appium Driver
+def capabilities
+  {
+    caps: {
+      platformName: 'Android',
+      platformVersion: '33.0',  # Update this if you're using a different Android API version
+      deviceName: 'Pixel_3a_API_33_arm64_v8a',
+      app: '/Users/gina/Desktop/android_automation/features/support/PreciseUnitConversion.apk',
+      automationName: 'UiAutomator2', # This is recommended for newer Android versions and Appium 2.0
+      avd: 'Pixel_3a_API_33_arm64_v8a', # Specify the AVD (Android Virtual Device) you want to use.
+      newCommandTimeout: '3600'
+      # Add other desired capabilities here
+    },
+    appium_lib: {
+      server_url: 'http://localhost:4723/wd/hub'
+    }
+  }
 end
 
-Appium::Driver.new(caps, true)
-Appium.promote_appium_methods Object
+# Create a custom World class so we can set up our own methods & attributes
+class AppiumWorld
+end
+
+# Set the World class to our custom class
+World do
+  AppiumWorld.new
+end
+
+# Set the driver to be used for all the steps
+Appium::Driver.new(capabilities, true)
+
+# Promote appium driver methods to class methods for our custom World
+Appium.promote_appium_methods(AppiumWorld)
+
