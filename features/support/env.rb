@@ -6,11 +6,11 @@ def capabilities
   {
     caps: {
       platformName: 'Android',
-      platformVersion: '33.0',  # Update this if you're using a different Android API version
-      deviceName: 'Pixel_3a_API_33_arm64_v8a',
+      # platformVersion: '28.0',  # Update this if you're using a different Android API version
+      deviceName: 'Pixel 4 API 28',
       app: '/Users/gina/Desktop/android_automation/features/support/PreciseUnitConversion.apk',
       automationName: 'UiAutomator2', # This is recommended for newer Android versions and Appium 2.0
-      avd: 'Pixel_3a_API_33_arm64_v8a', # Specify the AVD (Android Virtual Device) you want to use.
+      avd: 'Pixel_4_API_28', # Specify the AVD (Android Virtual Device) you want to use.
       newCommandTimeout: '3600'
       # Add other desired capabilities here
     },
