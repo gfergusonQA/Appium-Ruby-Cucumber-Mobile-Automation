@@ -6,7 +6,7 @@ def capabilities
   {
     caps: {
       platformName: 'Android',
-      # platformVersion: '28.0',  # Update this if you're using a different Android API version
+      platformVersion: '28.0',  # Update this if you're using a different Android API version
       deviceName: 'Pixel 4 API 28',
       app: '/Users/gina/Desktop/android_automation/features/support/PreciseUnitConversion.apk',
       automationName: 'UiAutomator2', # This is recommended for newer Android versions and Appium 2.0

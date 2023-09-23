@@ -3,6 +3,8 @@
     "port": 4723,
     "basePath": "/wd/hub",
     "plugins": {
-        "base": ["some-plugin"]
+        "uiautomator2": {
+            "enabled": true
+        }
     }
 }
