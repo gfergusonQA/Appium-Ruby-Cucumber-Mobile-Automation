@@ -1,5 +1,3 @@
- $driver = Appium::Driver.new(capabilities, true)
-
 # Will run before every scenario. 'scenario' contains scenario details if needed.
 Before do |scenario|
     $driver.start_driver

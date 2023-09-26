@@ -1,10 +1,19 @@
-{
+    "server": {
     "hostname": "0.0.0.0",
     "port": 4723,
     "basePath": "/wd/hub",
     "plugins": {
-        "uiautomator2": {
+        "UiAutomator2": {
             "enabled": true
         }
+    },
+    "capabilities": {
+        "platformName": "Android",
+        "deviceName": "Pixel 4 API 33",
+        "app": "/Users/gina/Desktop/android_automation/features/support/PreciseUnitConversion.apk",
+        "automationName": "UiAutomator2"
+    },
+    "driver": {
+        "UiAutomator2"
     }
 }
